@@ -1,0 +1,71 @@
+{
+    "package_version": 2,
+    "version": "1.0.0",
+    "name": "res-searcher",
+    "description": "i18n:res-searcher.description",
+    "main": "./dist/main.js",
+    "dependencies": {
+        "axios": "^1.1.3",
+        "fs-extra": "^10.0.0",
+        "vue": "^3.1.4"
+    },
+    "devDependencies": {
+        "@types/node": "^16.0.1",
+        "@types/fs-extra": "^9.0.5",
+        "typescript": "^4.3.4"
+    },
+    "panels": {
+        "default": {
+            "title": "i18n:res-searcher.title",
+            "type": "dockable",
+            "main": "dist/panels/default",
+            "icon": "./static/icon/search.png",
+            "size": {
+                "min-width": 100,
+                "min-height": 300,
+                "width": 300,
+                "height": 480
+            }
+        }
+    },
+    "contributions": {
+        "menu": [
+            {
+                "path": "i18n:menu.extension",
+                "label": "i18n:res-searcher.title",
+                "icon": "./static/icon/search.png",
+                "message": "open-panel"
+            },
+            {
+                "path": "i18n:menu.develop/res-searcher",
+                "label": "i18n:res-searcher.send_to_panel",
+                "message": "send-to-panel"
+            }
+        ],
+        "shortcuts": [
+            {
+                "message": "open-panel",
+                "win": "ctrl+alt+s",
+                "mac": "cmd+option+s"
+            }
+        ],
+        "messages": {
+            "open-panel": {
+                "methods": [
+                    "openPanel"
+                ]
+            },
+            "send-to-panel": {
+                "methods": [
+                    "default.hello"
+                ]
+            }
+        }
+    },
+    "author": "la vie",
+    "editor": ">=3.4.2",
+    "scripts": {
+        "build": "tsc -b",
+        "watch": "tsc -w"
+    }
+}
